@@ -7,7 +7,7 @@ class EmptyJob extends Job {
 
     async runTest() {
         this.log.info(`run test:`)
-        await this.driver.open('https://baidu.com')
+        await this.driver.open('https://copha.net')
         this.log.info(`open web title is : ${await this.driver_.getTitle()}`)
         await Utils.countdown(5)
         this.log.info(`test end.`)
