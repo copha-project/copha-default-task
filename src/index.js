@@ -1,25 +1,23 @@
-const {Job, Utils} = require('copha')
+const {Task} = require('copha')
 
-class EmptyJob extends Job {
-    constructor(taskConf) {
-        super(taskConf)
+class EmptyTask extends Task {
+    constructor() {
+        super()
     }
 
     async runTest() {
-        this.log.info(`run test:`)
-        await this.driver.open('https://copha.net')
-        this.log.info(`open web title is : ${await this.driver_.getTitle()}`)
-        await Utils.countdown(5)
-        this.log.info(`test end.`)
     }
 
     async run(){
-        this.log.info('run job')
+        this.log.info(`start run task:`)
+        await this.driver.open('https://copha.net')
+        this.log.info(`open web title is : ${await this.driver_.getTitle()}`)
+        this.log.info(`task end.`)
     }
 
     async runBefore(){
-        this.log.info('runBefore in job')
+        this.log.info('Called before the task runs')
     }
 }
 
-module.exports = EmptyJob
+module.exports = EmptyTask
