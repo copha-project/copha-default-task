@@ -5,6 +5,10 @@ class EmptyTask extends Task {
         super()
     }
 
+    async init(){
+
+    }
+
     async runTest() {
     }
 
